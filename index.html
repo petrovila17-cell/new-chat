@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Create printable packaging inserts for Etsy and handmade shops in minutes.">
+    <title>PackNote Studio | Printable inserts for small shops</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="PackNote Studio home">
+        <span class="brand-mark">P</span>
+        <span>PackNote <em>Studio</em></span>
+      </a>
+      <nav class="nav">
+        <a href="#editor">Create</a>
+        <a href="#features">Features</a>
+        <span class="tag">Free beta</span>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">For Etsy and handmade sellers</p>
+          <h1>Turn each order into a memorable unboxing.</h1>
+          <p class="hero-text">Design thank-you cards, care instructions and review inserts. Export a print-ready design with your shop link and QR code.</p>
+          <a class="primary-action" href="#editor">Create an insert</a>
+          <div class="trust-row" aria-label="Product highlights">
+            <span>No account</span>
+            <span>Private in your browser</span>
+            <span>PNG and print PDF</span>
+          </div>
+        </div>
+        <div class="hero-cards" aria-hidden="true">
+          <div class="mock-card mock-main">
+            <div class="mock-logo">SC</div>
+            <small>STONE & CEDAR</small>
+            <strong>Thank you<br>for your order</strong>
+            <p>Made by hand, packed with care.</p>
+            <div class="mock-qr"></div>
+          </div>
+          <div class="mock-card mock-side">
+            <small>CANDLE CARE</small>
+            <strong>Trim. Light.<br>Enjoy.</strong>
+          </div>
+        </div>
+      </section>
+
+      <section id="editor" class="studio">
+        <div class="section-heading">
+          <p class="eyebrow">Insert builder</p>
+          <h2>Create your printable card</h2>
+        </div>
+
+        <div class="workspace">
+          <form class="controls" id="insert-form">
+            <fieldset>
+              <legend>Insert type</legend>
+              <div class="choice-row" id="type-choice">
+                <button class="chip is-selected" type="button" data-type="thanks">Thank you</button>
+                <button class="chip" type="button" data-type="care">Care card</button>
+                <button class="chip" type="button" data-type="review">Review request</button>
+              </div>
+            </fieldset>
+
+            <div class="grid-fields">
+              <label>
+                Shop name
+                <input id="shop-name" type="text" maxlength="34" value="Stone & Cedar">
+              </label>
+              <label>
+                Social handle
+                <input id="social" type="text" maxlength="35" value="@stoneandcedar">
+              </label>
+            </div>
+
+            <label>
+              Headline
+              <input id="headline" type="text" maxlength="58" value="Thank you for your order">
+            </label>
+
+            <label>
+              Message
+              <textarea id="message" rows="3" maxlength="180">Your handmade piece was packed with care. We hope it brings a little joy to your day.</textarea>
+            </label>
+
+            <div class="grid-fields">
+              <label>
+                Offer label
+                <input id="offer-label" type="text" maxlength="26" value="NEXT ORDER">
+              </label>
+              <label>
+                Promo code
+                <input id="promo-code" type="text" maxlength="22" value="THANKYOU10">
+              </label>
+            </div>
+
+            <label>
+              QR destination
+              <input id="destination" type="url" maxlength="84" value="https://etsy.me/stoneandcedar">
+              <span class="field-note" id="qr-status">A scannable QR code will be added to the card.</span>
+            </label>
+
+            <fieldset>
+              <legend>Design</legend>
+              <div class="design-row">
+                <label>
+                  Style
+                  <select id="theme">
+                    <option value="linen">Warm Linen</option>
+                    <option value="botanical">Botanical</option>
+                    <option value="midnight">Midnight</option>
+                    <option value="blush">Soft Blush</option>
+                  </select>
+                </label>
+                <label>
+                  Size
+                  <select id="card-size">
+                    <option value="business">3.5 x 2 in</option>
+                    <option value="postcard">4 x 6 in</option>
+                  </select>
+                </label>
+                <label class="color-field">
+                  Accent
+                  <input id="accent" type="color" value="#bb7450">
+                </label>
+              </div>
+            </fieldset>
+
+            <section class="export-box" aria-label="Export options">
+              <p class="export-title">Export your insert</p>
+              <div class="export-plan">
+                <div class="plan-heading">
+                  <div>
+                    <strong>Free export</strong>
+                    <span>Download PNG or printable PDF</span>
+                  </div>
+                  <span class="plan-price">Free</span>
+                </div>
+                <div class="actions">
+                  <button id="download-free-png" class="button button-dark" type="button">PNG with watermark</button>
+                  <button id="print-free-sheet" class="button button-light" type="button">PDF with watermark</button>
+                </div>
+              </div>
+            </section>
+
+            <p class="privacy-note">Your content stays on this device. PackNote does not upload images or links.</p>
+          </form>
+
+          <div class="preview-panel">
+            <div class="preview-toolbar">
+              <span>Live preview <small id="preview-status">Live preview</small></span>
+              <div class="preview-tools">
+                <button id="reset-template" type="button">Reset copy</button>
+              </div>
+            </div>
+            <div class="canvas-shell">
+              <canvas id="card-preview" width="1050" height="600" aria-label="Printable insert preview"></canvas>
+            </div>
+            <p class="print-hint">Preview updates instantly as you edit your insert.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="features">
+        <div class="feature">
+          <span>01</span>
+          <h3>Made for packages</h3>
+          <p>Popular insert formats for thank-you notes, product care and gentle review reminders.</p>
+        </div>
+        <div class="feature">
+          <span>02</span>
+          <h3>Ready to print</h3>
+          <p>Export a high-resolution card or a sheet arranged for home printing and trimming.</p>
+        </div>
+        <div class="feature">
+          <span>03</span>
+          <h3>Built for trust</h3>
+          <p>Nothing leaves the browser in this beta: no account, storage or marketplace integration.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>PackNote Studio</span>
+      <span>Printable inserts for independent sellers</span>
+    </footer>
+
+
+
+    <div id="print-area" aria-hidden="true"></div>
+
+    <script src="./config.js"></script>
+    <script src="./qr.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
