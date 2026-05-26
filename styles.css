@@ -885,3 +885,80 @@ textarea {
     margin-bottom: 8px;
   }
 }
+.templates-section {
+  padding: 120px 0;
+  background: #f7f3eb;
+}
+
+.section-copy {
+  max-width: 700px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.section-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: #b7744d;
+  margin-bottom: 18px;
+}
+
+.section-copy h2 {
+  font-size: 56px;
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+
+.section-text {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #5f5a54;
+}
+
+.templates-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.template-card {
+  background: #fffdf9;
+  border-radius: 28px;
+  padding: 40px;
+  min-height: 220px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition: transform 0.2s ease;
+}
+
+.template-card:hover {
+  transform: translateY(-4px);
+}
+
+.template-card span {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: #8f887f;
+}
+
+.template-card h3 {
+  font-size: 38px;
+  line-height: 1.1;
+  font-weight: 500;
+  max-width: 240px;
+}
+@media (max-width: 980px) {
+
+  .templates-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-copy h2 {
+    font-size: 42px;
+  }
+
+}
